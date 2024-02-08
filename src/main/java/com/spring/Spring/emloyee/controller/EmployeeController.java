@@ -9,7 +9,7 @@ import com.spring.Spring.emloyee.repository.UserRepository;
 import java.util.List;
 
 @RestController
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin("https://main--spring-employee-management.netlify.app")
 public class EmployeeController {
 
     @Autowired
