@@ -15,6 +15,7 @@ public class User {
 
     private Long id;
     private String name;
+    private String Date;
     private String inTime;
     private String logOut;
     private String workTime;

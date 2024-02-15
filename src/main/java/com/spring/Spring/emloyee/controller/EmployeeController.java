@@ -30,12 +30,13 @@ public class EmployeeController {
         return userRepository.findById(id)
                 .orElseThrow(() -> new UserNotFoundException(id));
     }
-
     @PutMapping("/user/{id}")
     User updateUser(@RequestBody User newUser, @PathVariable Long id) {
         return userRepository.findById(id)
                 .map(user -> {
+
                     user.setName(newUser.getName());
+                    user.setDate(newUser.getDate());
                     user.setInTime(newUser.getInTime());
                     user.setEmail(newUser.getEmail());
                     user.setLogOut(newUser.getLogOut());
