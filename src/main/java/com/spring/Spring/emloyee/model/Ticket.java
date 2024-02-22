@@ -10,15 +10,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class Ticket {
     @Id
-
     private Long id;
-    private String name;
-    private String Date;
-    private String inTime;
-    private String logOut;
-    private  String workdone;
-    private String workTime;
-    private String email;
+   private String name;
+   private String ticketype;
+   private String department;
+   private String details;
 }

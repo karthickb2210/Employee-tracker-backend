@@ -9,7 +9,7 @@ import com.spring.Spring.emloyee.repository.UserRepository;
 import java.util.List;
 
 @RestController
-@CrossOrigin("https://spring-employee-management.netlify.app")
+@CrossOrigin("https://spring-employee-management.netlify.app/")
 public class EmployeeController {
 
     @Autowired
@@ -34,12 +34,12 @@ public class EmployeeController {
     User updateUser(@RequestBody User newUser, @PathVariable Long id) {
         return userRepository.findById(id)
                 .map(user -> {
-
                     user.setName(newUser.getName());
                     user.setDate(newUser.getDate());
                     user.setInTime(newUser.getInTime());
                     user.setEmail(newUser.getEmail());
                     user.setLogOut(newUser.getLogOut());
+                    user.setWorkdone(newUser.getWorkdone());
                     user.setWorkTime(newUser.getWorkTime());
                     return userRepository.save(user);
                 }).orElseThrow(() -> new UserNotFoundException(id));
